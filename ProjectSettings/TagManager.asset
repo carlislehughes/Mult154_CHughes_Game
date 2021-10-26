@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - New tag
   - Server
   - GreenServer
   - RedServer
+  - Tape Player
+  - Note
   layers:
   - Default
   - TransparentFX
