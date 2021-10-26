@@ -69,7 +69,7 @@ public class PlayerInteractions : MonoBehaviour
 
     IEnumerator VariableDelayStart()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20);
         animTape.SetBool("StartStopTape", false);
     }
     IEnumerator VariableDelayRewind()
