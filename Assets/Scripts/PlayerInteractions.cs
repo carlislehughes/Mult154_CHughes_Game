@@ -75,7 +75,7 @@ public class PlayerInteractions : MonoBehaviour
         else if (collider.CompareTag("Finish"))
         {
 
-            instructionsPopUp.SetActive(true);
+            gameOverPopUp.SetActive(true);
         }
     }
 
