@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7014370883993352418}
   - component: {fileID: 888070710623301252}
   - component: {fileID: -6343583833971334487}
+  - component: {fileID: -1186180017698085147}
   m_Layer: 0
   m_Name: redserver
   m_TagString: RedServer
@@ -197,6 +198,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &-6343583833971334487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816061628856113463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5964061, y: 2.4454348, z: 2.3646948}
+  m_Center: {x: 0.00000023846457, y: 1.2227174, z: 0.26919565}
+--- !u!65 &-1186180017698085147
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

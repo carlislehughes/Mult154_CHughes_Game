@@ -7,19 +7,22 @@ public class PlayerInteractions : MonoBehaviour
 
     private NavMovement shadow;
     private AudioSource asPlayer;
+    public GameObject instructionsPopUp;
+    public GameObject gameOverPopUp;
     public AudioClip HeartBeatSound;
+    public AudioClip LightBeepSound;
+    public AudioClip ShortBeepSound;
+    public AudioClip BeepPuzzle;
 
     public GameObject[] serverPrefabs;
 
 
     public Animator animTape;
 
-    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         shadow = GameObject.Find("Shadow").GetComponent<NavMovement>();
         asPlayer = GetComponent<AudioSource>();
     }
@@ -40,9 +43,11 @@ public class PlayerInteractions : MonoBehaviour
         if (collider.CompareTag("Tape Player"))
         {
             //Call for animations and audio as well as UI
-            gameManager.instructionsPopUp.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E)) {
+            instructionsPopUp.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 animTape.SetBool("StartStopTape", true);
+                asPlayer.PlayOneShot(BeepPuzzle, .1f);
                 StartCoroutine(VariableDelayStart());
             }
             else if (Input.GetKeyDown(KeyCode.R))
@@ -59,12 +64,25 @@ public class PlayerInteractions : MonoBehaviour
 
             StartCoroutine(PopUpDelay());
         }
+        else if (collider.CompareTag("GreenServer"))
+        {
+            if (Input.GetKeyDown(KeyCode.E)) asPlayer.PlayOneShot(LightBeepSound, .1f);
+        }
+        else if (collider.CompareTag("RedServer"))
+        {
+            if (Input.GetKeyDown(KeyCode.E)) asPlayer.PlayOneShot(ShortBeepSound, .1f);
+        }
+        else if (collider.CompareTag("Finish"))
+        {
+
+            instructionsPopUp.SetActive(true);
+        }
     }
 
     IEnumerator PopUpDelay()
     {
-        yield return new WaitForSeconds(2);
-        gameManager.instructionsPopUp.SetActive(false);
+        yield return new WaitForSeconds(4);
+        instructionsPopUp.SetActive(false);
     }
 
     IEnumerator VariableDelayStart()

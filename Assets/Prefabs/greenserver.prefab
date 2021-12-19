@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218463829794526998, guid: d497dee4745fb384fb10887c5e9a4e14, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46f7c4eb4d8b3104ba4670a1c829bccc, type: 3}
     - target: {fileID: 3139958617648401364, guid: d497dee4745fb384fb10887c5e9a4e14, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -79,5 +83,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GreenServer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 218463829794526998, guid: d497dee4745fb384fb10887c5e9a4e14, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d497dee4745fb384fb10887c5e9a4e14, type: 3}
